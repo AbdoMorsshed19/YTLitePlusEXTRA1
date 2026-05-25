@@ -117,9 +117,6 @@ jobs:
 
       - name: Clone PSHeader
         run: git clone --quiet --depth=1 https://github.com/PoomSmart/PSHeader.git $THEOS/include/PSHeader
-
-      - name: Clone YouPiP
-        run: git clone --quiet --depth=1 https://github.com/PoomSmart/YouPiP.git
     
       - name: Clone YTUHD
         run: git clone --quiet --depth=1 https://github.com/SweptWasTaken/YTUHD.git
@@ -190,11 +187,6 @@ jobs:
       #   if: ${{ inputs.volboost }}
       #   run: git clone --quiet --depth=1 https://github.com/VasirakCalgux/VolumeBoostYT.git
         
-      - name: Build YouPiP
-        run: |
-          cd YouPiP
-          make clean package DEBUG=0 FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
-          mv packages/*.deb ${{ github.workspace }}/youpip.deb    
 
       - name: Build YTUHD
         run: |
